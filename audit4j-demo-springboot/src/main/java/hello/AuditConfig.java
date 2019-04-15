@@ -77,7 +77,7 @@ public class AuditConfig {
 
         springAudit4jConfig.setLayout(getLayout());
         
-        springAudit4jConfig.setAnnotationTransformer(null);
+        springAudit4jConfig.setAnnotationTransformer(new CustomizedAnnotationTransformer());
         
         return springAudit4jConfig;
     }
