@@ -21,16 +21,17 @@ public class GreetingController {
     }
 
 	@Audit
-	public void foo1(@AuditField(field="stringOne") String string1, @AuditField(field="stringTwo") String string2) {
-		// TODO Auto-generated method stub
-		
+	@RequestMapping("/audit1")
+	public String foo1(@AuditField(field="stringOne") String string1, @AuditField(field="stringTwo") String string2) {
+	    LOGGER.info("audit2 called");
+	    return "hello";
 	}
 	
 	@Audit
-	public void foo2(String string1, String string2) {
-		// TODO Auto-generated method stub
-		
+	@RequestMapping("/audit2")
+	public String foo2(String string1, String string2) {
+	    LOGGER.info("audit2 called");
+        return "hello";		
 	}
-    
 
 }
